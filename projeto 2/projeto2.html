@@ -13,6 +13,7 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -21,7 +22,7 @@
 
         body {
             font-family: 'Times New Roman', Times, serif;
-       
+            overflow-x: hidden;
         }
 
         /* MENU */
@@ -91,7 +92,7 @@
         .titulo {
             text-align: center;
             font-size: 38px;
-            weight:100px:
+            font-weight: bold;
             margin-bottom: 40px;
         }
 
@@ -106,7 +107,7 @@
 
         .card {
             border-radius: 15px;
-           
+            overflow: hidden;
             height: 100%;
         }
 
@@ -156,7 +157,7 @@
         #drive h2 {
             font-size: 55px;
             color: #ffc72c;
-           
+            font-weight: bold;
         }
 
         #drive iframe {
@@ -434,12 +435,7 @@
                             Email:
                         </label>
 
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            placeholder="Digite seu email">
-
+                       
                     </div>
 
                     <div class="mb-3">
@@ -448,11 +444,6 @@
                             Nome:
                         </label>
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="nome"
-                            placeholder="Digite seu nome">
 
                     </div>
 
@@ -481,9 +472,6 @@
 </body>
 
 </html>
-
-
-
 
 
 
