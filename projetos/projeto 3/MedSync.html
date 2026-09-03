@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSync | Saúde em primeiro lugar !</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5fbfc;
+            color: #24404a;
+        }
+        header {
+            background-color: white;
+        }
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            font-size: 32px;
+            color: #159a9c;
+        }
+        .logo{
+            color: #2186c4;
+        }
+        .menu {
+            display: flex;
+            gap: 35px;
+        }
+        .menu a {
+        color: #36545e;
+        size: 17px;
+        weight: 17px
+        transition 0.3s;
+        }
+        .menu a:hover {
+            color: #159a9c;
+        }
+        .carrinho {
+            background: linear-gradient(90deg, #159a9c, #2186c4);
+            color: white;
+            padding: 13px 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #inicio {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            padding: 60px 10%;
+            background:
+                linear-gradient(90deg,
+                    #e4f8f4,
+                    #e7f4ff);
+        }
+        .inicio-texto {
+            width: 50%;
+        }
+        .inicio-texto p {
+            color: #159a9c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .inicio-texto h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+            color: #29434d;
+        }
+        .inicio-texto h1 span {
+            color: #2186c4;
+        }
+        .descricao {
+            font-size: 19px;
+            line-height: 1.6;
+            color: #536c75 !important;
+            font-weight: 100 !important;
+        }
+        .botao {
+            display: flex;
+            margin-top: 25px;
+            padding: 16px 28px;
+            background:
+                linear-gradient(90deg,
+                    #159a9c,
+                    #2186c4);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .inicio-imagem {
+            width: 50%;
+            text-align: center;
+        }
+        .inicio-imagem img {
+            width: 100%;
+            width: 550px;
+            height: 350px;
+            border-radius: 25px;
+        }
+        .diferenciais {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 10%;
+            background-color: white;
+        }
+        .diferencial {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 33%;
+        }
+        .icone {
+            min-width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background-color: #e1f5f2;
+            border-radius: 50%;
+        }
+        .diferencial h3 {
+            margin-bottom: 8px;
+        }
+        .diferencial p {
+            color: #60767d;
+            height: 1.5;
+        }
+        #remedios {
+            padding: 80px 10%;
+            background-color: #f2fafb;
+        }
+        .titulo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .titulo h2 {
+            font-size: 38px;
+            color: #29434d;
+        }
+        .titulo p {
+            color: #159a9c;
+            weight: bold;
+            margin-bottom: 8px;
+        }
+        .produtos {
+            display: grid;
+            gap: 25px;
+        }
+        .produto {
+            background-color: white;
+            border-radius: 18px;
+            padding: 18px;
+            transition: 0.3s;
+        }
+        .produto img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            background-color: #eef8f7;
+        }
+        .categoria {
+            display: inline-block;
+            margin-top: 15px;
+            color:#159a9c;
+            font-size: 15px;
+            weight: bold;
+        }
+        .produto h3 {
+            font-size: 21px;
+            margin: 10px 0;
+        }
+        .produto p {
+            color: #657980;
+            line-height: 1.5;
+            height: 45px;
+        }
+        .preco {
+            display: flex;
+            color: #159a9c;
+            font-size: 20px;
+            weight: 0.3s 
+        }
+        .produto button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 13px;
+            border-radius: 8px;
+            background-color: #e1f4f2;
+            color: #167e81;
+            font-size: 15px;
+        weight: 0.3s;
+            transition: 0.3s;
+        }
+        .produto button:hover {
+            background-color: #159a9c;
+            color: white;
+        }
+        #historia {
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background-color: white;
+        }
+        .historia-imagem {
+            width: 45%;
+        }
+        .historia-imagem img {
+            width: 100%;
+            height: 400px;
+            border-radius: 25px;
+        }
+        .historia-texto {
+            width: 55%;
+        }
+        .historia-texto h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+            color: #29434d;
+        }
+        .historia-texto p {
+            margin-bottom: 18px;
+            line-height: 1.7;
+            color: #5b7078;
+        }
+        .missao {
+            background-color:
+                (90deg,
+                    #e1f8f2,
+                    #e7f4ff);
+            padding: 22px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+        #contato {
+            padding: 80px 10%;
+            background-color:
+                (135deg,
+                    #e3f7f3,
+                    #e6f3ff);
+        }
+        .contato-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .informacoes {
+            width: 40%;
+        }
+        .info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .info h3 {
+            color: #159a9c;
+            margin-bottom: 8px;
+        }
+        form {
+            width: 60%;
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            background:
+                (90deg,
+                    #b2e1e2,
+                    #2186c4);
+            color: white;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #173e4c;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+        footer h2 {
+            margin-bottom: 10px;
+            color: #7ce0d2;
+        }
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            #inicio {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .inicio-texto,
+            .inicio-imagem {
+                width: 100%;
+            }
+            .produtos {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+            .diferenciais {
+                flex-direction: column;
+            }
+            .diferencial {
+                width: 100%;
+            }
+            #historia {
+                flex-direction: column;
+            }
+            .historia-imagem,
+            .historia-texto {
+                width: 100%;
+            }
+            .contato-container {
+                flex-direction: column;
+            }
+            .informacoes {
+                width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .menu {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .inicio-texto h1 {
+                font-size: 40px;
+            }
+            .produtos {
+                grid-template-columns: 1fr;
+            }
+            .titulo {
+                display: block;
+            }
+            .inicio-imagem img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Med<b>Sync</b> 
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#remedios">Remédios</a>
+                </li>
+                <li>
+                    <a href="#historia">Nossa História</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+            <button class="carrinho">
+                🛒 Carrinho
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <div class="inicio-texto">
+                <p>
+                    SUA MELHOR FARMÁCIA
+                </p>
+                <h1>
+                    Saúde em perfeita
+                    <b>sintonia.</b>
+                </h1>
+                <p class="descricao">
+                    Cuidamos de você e da sua família com carinho,
+                    qualidade e atendimento como você merece
+                </p>
+                <a href="#remedios" class="botao">
+                    Ver medicamentos ⚕️
+                </a>
+            </div>
+            <div class="inicio-imagem">
+                <img src="https://i.pinimg.com/736x/1a/7e/09/1a7e0992188488cbf5e94612925a00e2.jpg"
+                    alt="Farmácia e medicamentos">
+            </div>
+        </section>
+        <section class="diferenciais">
+            <div class="diferencial">
+                <h3>
+                    Atendimento acolhedor
+                </h3>
+                <p>
+                    Uma equipe preparada para cuidar de você.
+                </p>
+            </div>
+            </div>
+            <div class="diferencial">
+                <h3>
+                    Entrega rápida
+                </h3>
+                <p>
+                    Mais praticidade para receber onde estiver.
+                </p>
+            </div>
+            </div>
+            <div class="diferencial">
+                <h3>
+                    Farmácia de bairro
+                </h3>
+                <p>
+                    Sempre perto da comunidade de Rio Claro.
+                </p>
+            </div>
+            </div>
+        </section>
+        <section id="remedios">
+            <div class="titulo">
+                <div>
+                    <p>
+                        MAIS PROCURADOS
+                    </p>
+                    <h2>
+                        Produtos em destaque
+                    </h2>
+                </div>
+            </div>
+<section id="remedios">
+    <div class="titulo">
+        <div>
+            <p>MAIS PROCURADOS</p>
+            <h2>Produtos em destaque</h2>
+        </div>
+    </div>
+    <div class="produtos">
+        <!-- PRODUTO 1 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx3LNLwD9GMEFVGhV2dpZ4gp5TBJixlH2okgAcqW4Jrg&s=10"
+                alt="Paracetamol">
+            <u class="categoria">ANALGÉSICOS</u>
+            <h3>Paracetamol</h3>
+            <p>Alívio para dores e febre.</p>
+            <b class="preco">R$ 12,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 2 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xpvI4-oCG1RVnvALj8MKurt0jjN4AdTyonm4DRn3tw&s=10"
+                alt="Vitamina C">
+            <u class="categoria">VITAMINAS</u>
+            <h3>Vitamina C</h3>
+            <p>Auxilia no fortalecimento do organismo.</p>
+            <b class="preco">R$ 24,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 3 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5pl7cKYwgYw7gqDIp1UOgqEmEz7CHPDpfTzwWfenlhA&s=10"
+                alt="Ibuprofeno">
+            <u class="categoria">MEDICAMENTOS</u>
+            <h3>Ibuprofeno</h3>
+            <p>Medicamento utilizado para dores.</p>
+            <b class="preco">R$ 18,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 4 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbpAT__l5mOP-DHPXWU8EEyUrzXNk6LcjT9yUvOzS27A&s=10"
+                alt="Álcool em Gel">
+            <u class="categoria">HIGIENE</u>
+            <h3>Álcool em Gel</h3>
+            <p>Proteção e higiene para o dia a dia.</p>
+            <b class="preco">R$ 9,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 5 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyM-k1YKEYOm8iIwYjD3QSoxfy6JmANcOMUWK4Fv4Pg&s=10"
+                alt="Multivitamínico">
+            <u class="categoria">VITAMINAS</u>
+            <h3>Multivitamínico</h3>
+            <p>Vitaminas para complementar sua rotina.</p>
+            <b class="preco">R$ 35,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 6 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUT8NzE20qElKv15d4kIWc1fLCBBWu6KRvDXKwIdByVg&s=10"
+                alt="Sabonete Líquido">
+            <u class="categoria">CUIDADOS</u>
+            <h3>Sabonete Líquido</h3>
+            <p>Limpeza e cuidado para sua pele.</p>
+            <b class="preco">R$ 14,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 7 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ1M3M9GJ-LgHXq8JRj7pYgl_QrOKc7YnBJPmPIf5cug&s=10"
+                alt="Curativos">
+            <u class="categoria">PRIMEIROS SOCORROS</u>
+            <h3>Curativo Líquido</h3>
+            <p>Proteção para pequenos ferimentos.</p>
+            <b class="preco">R$ 7,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+        <!-- PRODUTO 8 -->
+        <div class="produto">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSzdvTrU7eIke1bD-TlIEbf8ZKwgtTAAFmoTO1ZV-EmmqlYRkAZBnVAzO9GliCUQD8MopdnU2yQ1EYTueiQ9Yyjjk8g-p9vvBa7wW9OX9Y_&usqp=CAc"
+                alt="Kit Saúde">
+            <u class="categoria">CUIDADOS</u>
+            <h3>Kit Saúde</h3>
+            <p>Produtos essenciais para sua rotina.</p>
+            <b class="preco">R$ 29,90</b>
+            <button type="button">Adicionar ao carrinho</button>
+        </div>
+    </div>
+</section>
+                </div>
+        </section>
+        <section id="historia">
+            <div class="historia-imagem">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7DPfz1DvJDX2I5e66SUBi7NcLxxqSNC88puhzWT3Ztg&s=10"
+                    alt="Medicamentos e saúde">
+            </div>
+            <div class="historia-texto">
+                <h2>
+                    Nossa História 
+                </h2>
+                <p>
+                    A MedSync nasceu do encontro entre amizade, educação e superação. Seus fundadores,
+                    Daniel,Jorge,Grilo, sempre compartilharam mais do que a profissão de professores:
+                    compartilhavam o desejo de transformar realidades por meio do conhecimento, do cuidado com as
+                    pessoas e de iniciativas com proposito
+                    Ao longo dos anos em sala de aula, os três conviveram com diferentes histórias de alunos, famílias e
+                    membros da comunidade que enfrentavam dificuldades no acesso a informações de saúde,medicamentos e
+                    atendimento de confiança.
+                    Essa percepção ficou ainda mais forte quando Grilo enfrentou um câncer, passando por um período
+                    delicado de tratamento, consultas, exames e uso continuo de medicamentos.
+                    A experiência mostrou de perto como o cuidado em saúde vai muito além do remédio: envolve
+                    acolhimento, orientação, empatia e acesso facilitado.
+
+                </p>
+                <p>
+                    Durante esse processo, Daniel, Eduardo e Grilo perceberam que muitas pessoas, especialmente em
+                    bairros mais próximos da comunidade, precisavam de uma farmácia que oferecesse não apenas produtos,
+                    mas também atenção, confiança e suporte humano.
+                    Foi dessa reflexão
+                </p>
+                O nome MedSync representa justamente essa proposta: sincronizar saúde, tecnologia, atendimento e
+                proximidade humana.
+                Como educadores, os fundadores trouxeram para a empresa valores que sempre defenderam em sua trajetória
+                profissional, como escuta ativa, responsabilidade, ética, orientação clara e compromisso com o bem-estar
+                coletivo.
+                <p>
+                    Nossa missão é estar sempre perto das famílias
+                    de Rio Claro/SP, oferecendo qualidade, informação
+                    e produtos para o bem-estar.
+                </p>Instalada em Rio Claro/SP, a MedSync foi idealizada para ser uma farmácia de bairro moderna,
+                acessível e acolhedora, preparada para atender famílias, idosos, pacientes em tratamento continuo e toda
+                a comunidade local.
+                Mais do que vender medicamentos, a empresa busca criar vínculos, oferecer segurança no atendimento e
+                ajudar cada cliente a se sentir cuidado de forma integral.
+                <p>
+                    A história da MedSync é, portanto, a união de três professores empreendedores que transformaram
+                    vivências pessoais e profissionais em um negócio com propósito social.
+                    Inspirados pela superação de Grilo e pela vocação de ensinar e cuidar, os 3 decidiram construir uma
+                    empresa que tivesse como essência a saúde em perfeita sincronia com as necessidades das pessoas.
+                </p>
+                <p>
+
+                    <b>Descrição</b>
+
+                    A MedSync é uma farmácia de bairro localizada em Rio Claro/SP, criada para oferecer
+                    atendimento próximo, confiável e humanizado à comunidade. A empresa atua na venda de
+                    medicamentos e produtos de saúde, buscando unir praticidade, cuidado e orientação de
+                    qualidade. Seu propósito é cuidar das pessoas com agilidade e atenção, mantendo a saúde em
+                    perfeita sintonia com o dia a dia dos clientes.
+                <p></p>
+                <B>Missão</B>
+
+                Oferecer à comunidade de Rio Claro atendimento farmacêutico próximo, confiável e
+                humanizado, garantindo acesso a medicamentos, produtos de saúde e orientações com
+                agilidade, cuidado e respeito.
+                <p></p>
+                <b>Visão</b>
+                Ser a farmácia de bairro mais lembrada e confiável de Rio Claro/SP, reconhecida pela
+                excelência no atendimento, pela proximidade com os clientes e pelo compromisso com a
+                saúde e o bem estar da comunidade
+                </p>
+                <div class="missao">
+                    <h3>
+                        Saúde em perfeita sintonia.
+                    </h3>
+                    <p>
+                        Mais do que uma farmácia, queremos ser uma
+                        parceira no cuidado com você e sua família.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="contato">
+            <div class="titulo">
+                <div>
+                    <p>
+                        FALE CONOSCO
+                    </p>
+                    <h2>
+                        Entre em contato
+                    </h2>
+                </div>
+            </div>
+            <div class="contato-container">
+                <div class="informacoes">
+                    <div class="info">
+                        <h3>
+                            📍 Endereço
+                        </h3>
+                        <p>
+                            Rio Claro - SP
+                        </p>
+                    </div>
+                    <div class="info">
+                        <h3>
+                            📞 Telefone
+                        </h3>
+                        <p>
+                            (19) 99999-0000
+                        </p>
+                    </div>
+                    <div class="info">
+                        <h3>
+                            ✉ E-mail
+                        </h3>
+                        <p>
+                            MedSync@gmail.com.br
+                        </p>
+                    </div>
+                    <div class="info">
+                        <h3>
+                            🕒 Horário
+                        </h3>
+                        <p>
+                            Segunda a Sexta: 08h às 18h
+                        </p>
+                    </div>
+                </div>
+                <h2>
+                    Envie sua mensagem 
+                </h2>
+                <label>
+                    Nome:
+                </label>
+                <label>
+                    E-mail:
+                </label>
+                <label>
+                    Mensagem:
+                </label>
+                <button type="submit">
+                    Enviar mensagem
+                </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2>
+            MedSync
+        </h2>
+        <p>
+            Saúde em perfeita sintonia.
+        </p>
+        <br>
+        <p>
+            © 2026 MedSync | Rio Claro - SP
+        </p>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</html>
