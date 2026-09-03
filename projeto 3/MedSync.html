@@ -296,63 +296,115 @@
             margin-bottom: 10px;
             color: #7ce0d2;
         }
-        @media (max-width: 900px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-            #inicio {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-            .inicio-texto,
-            .inicio-imagem {
-                width: 100%;
-            }
-            .produtos {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-            .diferenciais {
-                flex-direction: column;
-            }
-            .diferencial {
-                width: 100%;
-            }
-            #historia {
-                flex-direction: column;
-            }
-            .historia-imagem,
-            .historia-texto {
-                width: 100%;
-            }
-            .contato-container {
-                flex-direction: column;
-            }
-            .informacoes {
-                width: 100%;
-            }
-        }
-        @media (max-width: 600px) {
-            .menu {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .inicio-texto h1 {
-                font-size: 40px;
-            }
-            .produtos {
-                grid-template-columns: 1fr;
-            }
-            .titulo {
-                flex-direction: column;
-            }
-            .inicio-imagem img {
-                height: 250px;
-            }
-        }
+
+
+@media (min-width: 901px) {
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content:center
+        align-items: center;
+    }
+    #inicio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:center;
+        gap: 50px;
+    }
+    .inicio-texto,
+    .inicio-imagem {
+        width: 50%;
+    }
+    .produtos {
+        grid-template-columns:(4, 1fr);
+    }
+    .diferenciais {
+        display: flex;
+        flex-direction: row;
+        justify-content:center
+        gap: 20px;
+    }
+    .diferencial {
+        width: 100%;
+    }
+    #historia {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+    .historia-imagem,
+    .historia-texto {
+        width: 50%;
+    }
+    .contato-container {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+    .informacoes {
+        width: 50%;
+    }
+}
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #inicio {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .inicio-texto,
+    .inicio-imagem {
+        width: 100%;
+    }
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .diferenciais {
+        flex-direction: column;
+    }
+    .diferencial {
+        width: 100%;
+    }
+    #historia {
+        flex-direction: column;
+    }
+    .historia-imagem,
+    .historia-texto {
+        width: 100%;
+    }
+    .contato-container {
+        flex-direction: column;
+    }
+    .informacoes {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .menu {
+        gap: 15px;
+        justify-content: center;
+    }
+    .inicio-texto h1 {
+        font-size: 40px;
+    }
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+    .titulo {
+        flex-direction: column;
+    }
+    .inicio-imagem img {
+        width: 100%;
+        height: 250px;
+    
+    }
+}
     </style>
 </head>
 <body>
