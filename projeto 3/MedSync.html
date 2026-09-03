@@ -9,6 +9,7 @@
         * {
             margin: 0;
             padding: 0;
+             box-sizing: border-box;
         }
         body {
             font-family: 'Times New Roman', Times, serif;
@@ -346,7 +347,7 @@
                 grid-template-columns: 1fr;
             }
             .titulo {
-                display: block;
+                flex-direction: column;
             }
             .inicio-imagem img {
                 height: 250px;
@@ -355,25 +356,43 @@
     </style>
 </head>
 <body>
+  
     <header>
+
         <nav>
+
             <div class="logo">
-                Med<b>Sync</b> 
+
+                <img
+                    src="images/Captura de tela 2026-09-03 111213.png" width="100" height="65"
+                    alt="Logo MedSync">
+
+                Med<b>Sync</b>
+
             </div>
+
+
             <ul class="menu">
+
                 <li>
                     <a href="#inicio">Início</a>
                 </li>
+
                 <li>
                     <a href="#remedios">Remédios</a>
                 </li>
+
                 <li>
                     <a href="#historia">Nossa História</a>
                 </li>
+
                 <li>
                     <a href="#contato">Contato</a>
                 </li>
+
             </ul>
+
+
             <button class="carrinho">
                 🛒 Carrinho
             </button>
@@ -398,7 +417,7 @@
                 </a>
             </div>
             <div class="inicio-imagem">
-                <img src="https://i.pinimg.com/736x/1a/7e/09/1a7e0992188488cbf5e94612925a00e2.jpg"
+                <img src="images/ChatGPT Image 3 de set. de 2026, 14_34_37.png"
                     alt="Farmácia e medicamentos">
             </div>
         </section>
@@ -430,18 +449,7 @@
                 </p>
             </div>
             </div>
-        </section>
-        <section id="remedios">
-            <div class="titulo">
-                <div>
-                    <p>
-                        MAIS PROCURADOS
-                    </p>
-                    <h2>
-                        Produtos em destaque
-                    </h2>
-                </div>
-            </div>
+        </section>       
 <section id="remedios">
     <div class="titulo">
         <div>
@@ -526,7 +534,7 @@
                 alt="Kit Saúde">
             <u class="categoria">CUIDADOS</u>
             <h3>Kit Saúde</h3>
-            <p>Produtos essenciais para sua rotina.</p>
+            <p>Monitoramento de sinais vitais.</p>
             <b class="preco">R$ 29,90</b>
             <button type="button">Adicionar ao carrinho</button>
         </div>
@@ -536,7 +544,7 @@
         </section>
         <section id="historia">
             <div class="historia-imagem">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7DPfz1DvJDX2I5e66SUBi7NcLxxqSNC88puhzWT3Ztg&s=10"
+                <img src=""
                     alt="Medicamentos e saúde">
             </div>
             <div class="historia-texto">
@@ -558,7 +566,7 @@
 
                 </p>
                 <p>
-                    Durante esse processo, Daniel, Eduardo e Lázaro perceberam que muitas pessoas, especialmente em
+                    Durante esse processo, Daniel, Eduardo e grilo perceberam que muitas pessoas, especialmente em
                     bairros mais próximos da comunidade, precisavam de uma farmácia que oferecesse não apenas produtos,
                     mas também atenção, confiança e suporte humano.
                     Foi dessa reflexão
@@ -572,6 +580,7 @@
                     Nossa missão é estar sempre perto das famílias
                     de Rio Claro/SP, oferecendo qualidade, informação
                     e produtos para o bem-estar.
+
                 </p>Instalada em Rio Claro/SP, a MedSync foi idealizada para ser uma farmácia de bairro moderna,
                 acessível e acolhedora, preparada para atender famílias, idosos, pacientes em tratamento continuo e toda
                 a comunidade local.
@@ -665,13 +674,13 @@
                     Envie sua mensagem 💚
                 </h2>
                 <label>
-                    Nome
+                    Nome:
                 </label>
                 <label>
-                    E-mail
+                    E-mail:
                 </label>
                 <label>
-                    Mensagem
+                    Mensagem:
                 </label>
                 <button type="submit">
                     Enviar mensagem
